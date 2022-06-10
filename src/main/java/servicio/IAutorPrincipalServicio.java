@@ -14,7 +14,5 @@ import modelo.AutorPrincipal;
 public interface IAutorPrincipalServicio {
     public AutorPrincipal crear(AutorPrincipal autorPrincipal);
     public List<AutorPrincipal> listar();
-    public AutorPrincipal buscarPorCodigo(int codigo);
-    public AutorPrincipal eliminar(int codigo);
     
 }

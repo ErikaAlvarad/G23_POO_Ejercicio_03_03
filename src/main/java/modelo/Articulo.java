@@ -13,24 +13,36 @@ public class Articulo {
     private String idioma;
     private int codigo;
     private int numPublicaiones;
-    private AutorPrincipal autorP;
-    private Revista revista;
+//    private AutorPrincipal autorP;
+//    private Revista revista;
 
     public Articulo(int codigo,String titulo, String idioma,  
-            int numPublicaiones, AutorPrincipal autorP, Revista revista) {
+            int numPublicaiones) {
         this.codigo = codigo;
         this.titulo = titulo;
         this.idioma = idioma;
         
         this.numPublicaiones = numPublicaiones;
-        this.autorP = autorP;
-        this.revista = revista;
+//        this.autorP = autorP;
+//        this.revista = revista;
     }
 
-    public Articulo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean excedeNumPublicaciones(int numMax){
+        var retorno = false;
+        if (this.getNumPublicaiones() > numMax){
+            retorno = true;
+        }
+        return retorno;
     }
-
+    
+    
+    public boolean esIngles(){
+        var retorno = false;
+        if (this.getIdioma() == "Ingles"){
+            retorno = true;
+        }
+        return retorno;
+    }
 
     public String getTitulo() {
         return titulo;
@@ -64,27 +76,12 @@ public class Articulo {
         this.numPublicaiones = numPublicaiones;
     }
 
-    public AutorPrincipal getAutorP() {
-        return autorP;
-    }
-
-    public void setAutorP(AutorPrincipal autorP) {
-        this.autorP = autorP;
-    }
-
-    public Revista getRevista() {
-        return revista;
-    }
-
-    public void setRevista(Revista revista) {
-        this.revista = revista;
-    }
 
     @Override
     public String toString() {
-        return "Articulo{" + "titulo=" + titulo + ", idioma=" + idioma 
-                + ", codigo=" + codigo + ", numPublicaiones=" + numPublicaiones 
-                + ", autorP=" + autorP + ", revista=" + revista + '}';
+        return "Articulo{" + " codigo=" + codigo + " ,titulo=" + titulo + ", idioma=" + idioma 
+                 + ", numPublicaiones=" + numPublicaiones 
+                +  '}';
     }
 
     

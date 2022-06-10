@@ -26,25 +26,5 @@ public class RevistaServicio implements IRevistaServicio{
     public List<Revista> listar() {
         return this.revistaList;
     }
-
-   
-    @Override
-    public Revista buscarPorCodigo(int codigo) {
-        var revista = new Revista(codigo,"Hogar",20,12,2018);
-        for(Revista rev:this.revistaList){
-            if(rev.getCodigo()==codigo){
-                revista=rev;
-                break;
-            }
-        }
-        return revista;}
-
-    @Override
-    public Revista eliminar(int codigo) {
-        var revista = this.buscarPorCodigo(codigo);
-        this.revistaList.remove(revista);
-        return revista;
-    }
-    
     
 }

@@ -15,7 +15,5 @@ public interface IArticuloServicio {
     
     public Articulo crear(Articulo articulo);
     public List<Articulo> listar(); 
-    public Articulo buscarPorCodigo(int codigo);
-    public Articulo eliminar (int codigo);
     
 }

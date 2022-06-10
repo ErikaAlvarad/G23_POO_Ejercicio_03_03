@@ -24,6 +24,17 @@ public class AutorPrincipal {
         
     }
 
+    public int calcularEdad (int yearActual){
+        var retorno = yearActual - this.getYearNacimiento();
+        return retorno;
+    }
+    
+    public String obtenerPaisOrigen(){
+       return this.getOrigen();
+    }
+    
+    
+    
     public String getNombre() {
         return nombre;
     }

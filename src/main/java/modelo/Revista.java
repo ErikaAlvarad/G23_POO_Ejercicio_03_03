@@ -23,6 +23,24 @@ public class Revista {
         this.yearPublicacion = yearPublicacion;
     }
 
+    public boolean excedeCantidadPaginas(int pagMax){
+        var retorno = false;
+        if(this.getCantidadPaginas() > pagMax){
+            retorno = true;
+        }
+        return retorno;
+    }
+    
+    
+    public boolean esRevistaActual(int yearLimite){
+        var retorno = false;
+        if(this.getYearPublicacion() > yearLimite){
+            retorno = true;
+        }
+        return retorno;
+        
+    }
+    
     public int getCodigo() {
         return codigo;
     }

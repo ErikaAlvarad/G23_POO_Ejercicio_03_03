@@ -44,8 +44,6 @@ public class AutorPrincipalVentana extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Autor Principal"));
-
         jLabel1.setText("Codigo:");
 
         jLabel2.setText("Nombre:");
@@ -57,14 +55,29 @@ public class AutorPrincipalVentana extends javax.swing.JFrame {
         jLabel5.setText("Salario:");
 
         jTextField1.setColumns(10);
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
 
         jTextField2.setColumns(15);
 
         jTextField3.setColumns(10);
+        jTextField3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField3KeyReleased(evt);
+            }
+        });
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Elegir", "Alemania", "Argentina", "Bolivia", "Colombia", "Corea", "Costa Rica", "Dinamarca", "Ecuador", "Estados Unidos", "Finlandia", "Guatemala", "Honduras", "Otro" }));
 
         jTextField4.setColumns(10);
+        jTextField4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField4KeyReleased(evt);
+            }
+        });
 
         jButton1.setText("Guardar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -137,7 +150,7 @@ public class AutorPrincipalVentana extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,12 +180,34 @@ public class AutorPrincipalVentana extends javax.swing.JFrame {
         args[2]=this.jComboBox1.getSelectedItem().toString();
         args[3]=this.jTextField3.getText();
         args[4]=this.jTextField4.getText();
+        this.jTextField1.setText("");
+        this.jTextField2.setText("");
+        this.jTextField3.setText("");
+        this.jTextField4.setText("");
         autorPrincipalControl.crear(args);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         System.out.println(this.autorPrincipalControl.listar().toString());
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        if(!Character.isDigit(evt.getKeyChar())){
+            this.jTextField1.setText("");
+        }
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField3KeyReleased
+        if(!Character.isDigit(evt.getKeyChar())){
+            this.jTextField3.setText("");
+        }
+    }//GEN-LAST:event_jTextField3KeyReleased
+
+    private void jTextField4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField4KeyReleased
+        if(!Character.isDigit(evt.getKeyChar())){
+            this.jTextField4.setText("");
+        }
+    }//GEN-LAST:event_jTextField4KeyReleased
 
     /**
      * @param args the command line arguments

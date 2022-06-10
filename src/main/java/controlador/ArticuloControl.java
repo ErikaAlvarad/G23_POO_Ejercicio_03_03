@@ -17,15 +17,13 @@ import servicio.RevistaServicio;
 public class ArticuloControl {
     
     private final ArticuloServicio articuloServicio = new ArticuloServicio();
-    private final AutorPrincipalServicio autorPrincipalServicio = new AutorPrincipalServicio();
-    private final RevistaServicio revistaServicio = new RevistaServicio();
+    
     
     public Articulo crear(String [] args){
-        var autorPrincipal = this.autorPrincipalServicio.buscarPorCodigo(Integer.valueOf(args[4]));
-        var revista = this.revistaServicio.buscarPorCodigo(Integer.valueOf(args[6]));
+        
         
         var articulo= new Articulo(Integer.valueOf(args[0]),args[1],args[2],
-                Integer.valueOf(args[3]),autorPrincipal,revista);
+                Integer.valueOf(args[3]));
         this.articuloServicio.crear(articulo);
         return articulo;
     }

@@ -14,7 +14,5 @@ import modelo.Revista;
 public interface IRevistaServicio {
     public Revista crear(Revista revista);
     public List<Revista> listar();
-    public Revista buscarPorCodigo(int codigo);
-    public Revista eliminar(int codigo);
     
 }

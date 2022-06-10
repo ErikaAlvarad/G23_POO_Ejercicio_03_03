@@ -28,23 +28,6 @@ public class ArticuloServicio implements IArticuloServicio{
     }
 
 
-    @Override
-    public Articulo eliminar(int codigo) {
-        var articulo = this.buscarPorCodigo(codigo);
-        this.articuloList.remove(articulo);
-        return articulo;
-    }
-
-    @Override
-    public Articulo buscarPorCodigo(int i) {
-      var articulo = new Articulo();
-        for(Articulo art:this.articuloList){
-            if(art.getCodigo()==i){
-                articulo=art;
-                break;
-            }
-        }
-        return articulo;
-    }  
+   
     
 } 

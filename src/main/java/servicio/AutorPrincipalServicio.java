@@ -27,24 +27,7 @@ public class AutorPrincipalServicio implements IAutorPrincipalServicio{
         return this.autorPrincipalList;
     }
 
-   
-    @Override
-    public AutorPrincipal buscarPorCodigo(int codigo) {
-        var autorPrincipal = new AutorPrincipal(codigo,"Juan","Ecuador",1987,1200);
-        for(AutorPrincipal aup:this.autorPrincipalList){
-            if(aup.getCodigo()==codigo){
-                autorPrincipal=aup;
-                break;
-            }
-        }
-        return autorPrincipal;}
-
-    @Override
-    public AutorPrincipal eliminar(int codigo) {
-        var autorPrincipal = this.buscarPorCodigo(codigo);
-        this.autorPrincipalList.remove(autorPrincipal);
-        return autorPrincipal;
-    }
+  
     
     
 }
